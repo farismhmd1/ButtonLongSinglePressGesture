@@ -1,8 +1,8 @@
 # Custom UIButton for Long Press, Single Tap and Double Tap fast Detection
 </br>
-<B>UIButton which detects long press, single tap and double tap gesture gestures</B>
+<B>UIButton which detects long press, single tap and double tap gestures</B>
 </br>
-<p> useful for creating Whatsapp like audio & video recording button. </p>
+<B>useful for creating Whatsapp like audio & video recording button.<B>
 </br>
 
 <p align="center">
