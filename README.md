@@ -2,7 +2,7 @@
 </br>
 <B>UIButton which detects long press, single tap and double tap gestures</B>
 </br>
-<B>useful for creating Whatsapp like audio & video recording button.<B>
+<B>It is useful for creating Whatsapp like audio & video recording button.<B>
 </br>
 
 <p align="center">
