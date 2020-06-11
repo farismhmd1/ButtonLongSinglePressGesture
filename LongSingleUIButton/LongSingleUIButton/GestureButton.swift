@@ -13,7 +13,12 @@ protocol GestureButtonDelegate: class {
     func didDoubleTapButton()
     func didLongPressBeganButton()
     func didLongPressEndedButton()
+    func didLongPressRunning()
 }
+enum gestureState {
+    case began, ended, running
+}
+
 class GestureButton: UIButton {
     
     weak var delegate: GestureButtonDelegate?
@@ -21,6 +26,7 @@ class GestureButton: UIButton {
     var count: Double = 0
     var singleTapCount = 0
     var duration: String = ""
+    var gestureRunningState = gestureState.ended
     
     // Programatically initialization
     override init(frame: CGRect) {
@@ -91,11 +97,19 @@ class GestureButton: UIButton {
     }
     
     func longPressBegan() {
+        self.gestureRunningState = .began
         self.delegate?.didLongPressBeganButton()
         print("long press began")
     }
     
+    func longPressRunning() {
+        self.gestureRunningState = .running
+        self.delegate?.didLongPressRunning()
+        print("long press running")
+    }
+    
     func longPressEnded() {
+        self.gestureRunningState = .ended
         self.delegate?.didLongPressEndedButton()
         print("long press ended")
     }
@@ -108,6 +122,10 @@ class GestureButton: UIButton {
         duration = String(format: "%02i:%02i:%02i",hours,minutes,seconds)
         if count == 0.2 {
             self.longPressBegan()
+        } else {
+            if count > 0.2 {
+                self.longPressRunning()
+            }
         }
     }
     

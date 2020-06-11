@@ -36,6 +36,10 @@ extension ViewController: GestureButtonDelegate {
         statusLabel.text = "long press began"
     }
     
+    func didLongPressRunning() {
+        statusLabel.text = "long press running"
+    }
+    
     func didLongPressEndedButton() {
         statusLabel.text = "long press ended"
     }
