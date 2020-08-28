@@ -57,6 +57,10 @@ class GestureButton: UIButton {
         //        singleFire()
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
+        if timer != nil {
+            timer.invalidate()
+            timer = nil
+        }
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(rapidFire), userInfo: nil, repeats: true)
     }
     
